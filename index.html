@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website </title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/9878fd25e9.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+
+
+  <!---------------------------------------Home-------------------------------------------->
+  <div id="header">
+    <div class="container">
+      <nav>
+        <img src="Logo.png" class="Logo" width="25.5%" height="30%">
+        <ul id="sidemenu">
+          <li><a href="#header">Home</a></li>
+          <li><a href="#About">About</a></li>
+          <li><a href="#Projects">Projects</a></li>
+          <li><a href="#Contact">Contact</a></li>
+          <i class="fa-regular fa-circle-xmark" id="menu" onclick="closemenu()"></i>
+        </ul>
+        <i class="fa-solid fa-bars" id="menu" onclick="openmenu()"></i>
+      </nav>
+      <div class="header-text">
+        <p>Programmer</p>
+        <h2>Hi, I'm Shiksha from Indira Gandhi Delhi Technical University For Women</h2>
+      </div>
+    </div>
+  </div> 
+
+  <script>
+    var sidemenu = document.getElementById("sidemenu");
+
+    function openmenu(){
+          sidemenu.style.right="0";
+     }
+
+     function closemenu(){
+          sidemenu.style.right= "-200px";
+     }
+
+  </script>
+   <!---------------------------------------Home-------------------------------------------->
+  
+
+
+<!------------------------------------------About-------------------------------------------->
+  <div id="About">
+    <div class="forabout">
+      <div class="row"  height="100px">
+        <div class="col1">
+          <img src="shiksha.png">
+        </div>
+        <div class="col2">
+          <h1 class="subtitle">About Me</h1>
+          <p><br/>I am a highly motivated and results-oriented individual with a passion for software
+            development and product management. I am seeking a challenging and rewarding
+            internship role in a fast-paced and innovative environment where I can use my skills and
+            experience to develop and launch innovative products that meet the needs of users. I
+            am eager to learn from experienced professionals and contribute to the success of your
+            team.</p>
+
+            <div class="tab-titles">
+              <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+              <p class="tab-links" onclick="opentab('experience')">Experience</p>
+              <p class="tab-links" onclick="opentab('education')">Education</p>
+            </div>
+
+            <div class="tab-contents active-tab" id="skills">
+              <ul>
+                <li><span>Languages:</span></br><i>C, C++, HTML, CSS, SQL</i></li></br>
+                <li><span>Virtual Reality:</span></br><i>Unity, A-Frame</i></li></br>
+                <li><span>Version Control:</span></br><i>Git, Github</i></li></br>
+                <li><span>Scripting Language:</span></br><i>Apps Script</i></li></br>
+              </ul>
+            </div>
+
+            <div class="tab-contents" id="experience">
+              <ul>
+                <li><span>Research:</span> </br><i>Blockchain Security</i></li>
+              </br>
+                <li><span>Timechain Summer of Code:</span> </br><i>Developed a gmail plugin to enhance its security in a team of 3.</i></li></br>
+                <li><span>CS/IT Game Development:</span> </br><i>Developed a 3-level game based on Netflix series in a team of 15.</i></li></br>
+                <li><span>Centre of Sustainable Development:</span> </br><i>Designed and implemented the evaluation process for 1140 students enrolled in the CSD's General Elective Course</i></li>
+              </ul>
+            </div>
+
+            <div class="tab-contents" id="education">
+              <ul>
+                <li><span>Indira Gandhi Delhi Technical University For Women</span></br><i>Information Techmology:8.36&nbsp;&nbsp;&nbsp;&nbsp;2021-2024</i></li></br>
+                <li><span>Oxford Senior Secondary School</span></br><i>12th(CBSE):95.4%&nbsp;&nbsp;&nbsp;&nbsp;2020-2021</br>10th(CBSE):93.4%&nbsp;&nbsp;&nbsp;&nbsp;2018-2019</i></li></br>
+              </ul>
+            </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var tablinks= document.getElementsByClassName("tab-links");
+    var tabcontents= document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname){
+      for(tablink of tablinks){
+        tablink.classList.remove("active-link");
+      }
+
+      for(tabcontent of tabcontents){
+        tabcontent.classList.remove("active-tab");
+      }
+
+      event.currentTarget.classList.add("active-link");
+      document.getElementById(tabname).classList.add("active-tab");
+    }
+
+  </script>
+  <!------------------------------------------About---------------------------------------->
+
+
+
+  <!-----------------------------------------Projects--------------------------------------->
+  <div id="Projects">
+
+    <div class="container">
+      <h1 class="subtitle">My Work</h1>
+      <div class="worklist">
+
+
+        <div class="work">
+          <img src="upsidedown.png">
+          <div class="layer">
+            <h3>The UpsIde Down</h3>
+            <p>A three-level "Stranger Things" inspired puzzle game featuring demonic creatures and challenging code-based puzzles</p>
+            <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </div>
+        </div>
+
+
+        <div class="work">
+          <img src="VRChemistry1.png">
+          <div class="layer">
+            <h3>VR Chemistry Laboratory</h3>
+            <p>An immersive, user-friendly VR chemistry lab for Oculus Quest, enhancing student learning and safety in flame test experiments, with a peaceful user interface to minimise
+              cognitive load, while promoting risk-free experimentation</p>
+            <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </div>
+        </div>
+
+         
+        <div class="work">
+          <img src="solar-system.png">
+          <div class="layer">
+            <h3>Solar System</h3>
+            <p>An animation of a solar system created using A-Frame</p>
+            <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </div>
+        </div>
+
+
+      </div>
+      <a href="#" class="btn">See more</a>
+    </div>
+  </div>
+  <!---------------------------------------Projects---------------------------------->
+
+
+
+<!-----------------------------------------Contact------------------------------------>
+  <div id="Contact">
+    <div class="container">
+      <div class="row">
+
+      <div class="contact-left">
+        <h1 class="sub-tit le">Contact Me</h1>
+        <p><i class="fa-solid fa-envelope"></i>shikshanayan9540@gmail.com</p>
+        <p><i class="fa-solid fa-phone"></i>9310221979</p>
+        <div class="social-icons">
+          <a href="mailto:shikshanayan9540@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+          <a href="tel:9310221979"><i class="fa-solid fa-phone"></i></a>
+          <a href="https://www.linkedin.com/in/shiksha-nayan-057b87230/"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://github.com/shikshanayan"><i class="fa-brands fa-github"></i></a>
+        </div>
+         <a href="Shiksha_Nayan_Resume.pdf" download class="btn btn2">Download Resume</a>
+      </div>
+
+      <div class="contact-right">
+        <form action="connectdatabase.php" method="post">
+          <input type="text" name="Name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+           <textarea type="Message" rows="6" placeholder="Your Message"></textarea>
+           <button type="submit" class="btn btn2">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="copyright">
+    <p>copyright &#169 Shiksha Nayan</p>
+  </div>
+
+
+  </div>
+<!-----------------------------------------Contact------------------------------------>
+
+
+</body>
+</html> 
