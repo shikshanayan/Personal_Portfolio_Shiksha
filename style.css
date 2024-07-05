@@ -282,7 +282,7 @@ nav ul li a:hover::after{
      background: grey;
 }
 
-.contact-right{
+.contact-right form{
     width: 100%;
 }
 
@@ -400,6 +400,12 @@ nav ul #menu{
 /*-----------------------Contact-------------------------------*/
 
 
+}
+
+#msg{
+    color: aquamarine;
+    margin-top: -10px;
+    display: block;
 }
 
 /*-----------------CSS for small screens------------------------*/

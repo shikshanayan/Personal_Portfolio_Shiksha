@@ -189,12 +189,13 @@
       </div>
 
       <div class="contact-right">
-        <form action="connectdatabase.php" method="post">
+        <form name="submit-to-google-sheet">
           <input type="text" name="Name" placeholder="Your Name" required>
-          <input type="email" name="email" placeholder="Your Email" required>
-           <textarea type="Message" rows="6" placeholder="Your Message"></textarea>
+          <input type="email" name="Email" placeholder="Your Email" required>
+           <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
            <button type="submit" class="btn btn2">Submit</button>
         </form>
+        <span id="msg"></span>
       </div>
     </div>
   </div>
@@ -204,6 +205,25 @@
 
 
   </div>
+
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxuhPtVZJnDt25e5heINvYqPbpv32eUGVX6F1eueb2JJ1MPyBPr8IyTaN3C3pHkFBpJ/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg") 
+  
+    form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {
+        msg.innerHTML = "Message Sent Successfully!!"
+        setTimeout(function(){
+          msg.innerHTML=""
+        },7000) //the page is only active for 5000 millisec i.e 5sec
+        form.reset()
+      })
+      .catch(error => console.error('Error!', error.message))
+  })
+  </script>
 <!-----------------------------------------Contact------------------------------------>
 
 
